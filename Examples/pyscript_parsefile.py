@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-"""Os comentários em bloco ficam entre 3 aspas
-   Assim é possível comentar em bloco
+"""A simple python script template.
 """
 
 import os
@@ -15,19 +14,34 @@ from matplotlib import colors
 
 def main(arguments):
     
+    # ao rodar o script, o usuário deverá fornecer o nome do arquivo de entrada no terminal:
+    # a biblioteca argparse é usada para tal
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('infile', help="Input file", type=argparse.FileType('r'))
+    ##parser.add_argument('-o', '--outfile', help="Output file",
+    ##                    default=sys.stdout, type=argparse.FileType('w'))
+
+    args = parser.parse_args(arguments)
+
+    print(args)
+
+    # O nome do arquivo de entrada especificado no terminal 
+    # é acessado através da função argv da biblioteca sys (sys.argv[1:])
+    input_file = sys.argv[1:][0]
     
-    # Nome do arquivo de entrada
-    input_file = '/Users/helenamalbouisson/cernbox/Work/UERJ/Aulas/PYTHON/FisicaGeral_2017-2_2018-1/PythonLecture/Examples/dados_alunos.txt'
-    
-    # Abre o arquivo de entrada no modo de leitura
+    # Lê o arquivo de entrada
     ifile = open(input_file, 'r')
     
-    # Percorre o arquivo de entrada linha por linha e 
-    # salva cada coluna do arquivo em listas
+    # Para linha por linha do arquivo de entrada e 
+    # salva cada coluna do arquivo de entrada em listas
     idade = []
     altura = []
     massa = []
     for line in ifile:
+    	#print(line)
+        #print(line.split(), ' ', len(line.split()))
         columns = line.split()
         idade.append(eval(columns[0]))
         altura.append(eval(columns[1]))
