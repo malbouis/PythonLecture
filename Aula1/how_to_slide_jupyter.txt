@@ -1,0 +1,8 @@
+Once on the jupyter notebook:
+
+View -> Cell Toolbar -> Slideshow
+
+
+Then, on the terminal:
+
+jupyter nbconvert  Slides.ipynb --to slides --post serve

@@ -1,0 +1,7 @@
+1- Determinar o valor de um resistor a partir de seu código de cores e sua precisão → Obter R_{Cod. Cores} ± σ_{RCod. Cores} 
+2- Determinar o valor do resistor a partir da medição com um multímetro analógico (lembre de realizar o ajuste de zero do multímetro) → Obter R_Analógico ± σ_RAnalógico 
+3- Determinar o valor do resistor a partir da medição com um multímetro digital → Obter R_Digital ± σ_RDigital (utilize a escala de maior precisão)
+4- Analise a compatibilidade entre R_{Cod. Cores} e R_Analógico, R_{Cod. Cores} e R_Digital, R_Analógico e R_Digital (levando em consideração as incertezas)
+5 - Faça a combinação dos erros de tipo A e tipo B, usando o resultado da experiência com 100 resistores e determine a estimativa padrão de R_Digital
+6 - Faça 10 medidas de resistores com o multímetro analógico e determine a estimativa padrão R_Analógico
+7 - Faça a combinação de R_Digital e R_Analógico
