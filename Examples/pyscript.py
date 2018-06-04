@@ -2,16 +2,19 @@
 
 """Os comentários em bloco ficam entre 3 aspas
    Assim é possível comentar em bloco
+   A sintaxe usada acima: #!/usr/bin/env python é para indicar qual interpretador de Python o sistema deve usar. É específica do sistema Unix.
+   Em Unix, um arquivo executável que começa com #! indica qual o interpretador deve ser utilizado. 
 """
 
-import os
-import sys
-import argparse
+# com o import, explicitamos os módulos de Python que serão usados nesse programa  
+import os  # esse módulo é usado para acessar funcionalidades do sistema opracional (em geral, oferece portabilidade, i.e, estabilidade entre os diferentes sistemas operacionais)
+import sys # para interagir com o interpretador
 import statistics, math #bibliotecas usadas para o calculo de medias e desvio padrao populacional e amostral
 # bibliotecas para fazer histograma
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import colors
+
 
 def main(arguments):
     
@@ -23,7 +26,7 @@ def main(arguments):
     ifile = open(input_file, 'r')
     
     # Percorre o arquivo de entrada linha por linha e 
-    # salva cada coluna do arquivo em listas
+    # salva cada coluna do arquivo em uma lista
     idade = []
     altura = []
     massa = []
