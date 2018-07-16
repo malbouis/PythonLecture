@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python 
 
 """Os comentários em bloco ficam entre 3 aspas
    Assim é possível comentar em bloco
@@ -11,10 +11,9 @@ import os  # esse módulo é usado para acessar funcionalidades do sistema oprac
 import sys # para interagir com o interpretador
 import statistics, math #bibliotecas usadas para o calculo de medias e desvio padrao populacional e amostral
 # bibliotecas para fazer histograma
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # matplotlib é uma biblioteca de python para produzir figuras. pyplot é um módulo (arquivo contendo definições de funções e outros) do matplotlib que produz gráficos, histogramas, etc, no estilo MATLAB.
 import numpy as np
 from matplotlib import colors
-
 
 def main(arguments):
     
@@ -26,7 +25,7 @@ def main(arguments):
     ifile = open(input_file, 'r')
     
     # Percorre o arquivo de entrada linha por linha e 
-    # salva cada coluna do arquivo em uma lista
+    # salva cada coluna do arquivo em listas
     idade = []
     altura = []
     massa = []
@@ -44,17 +43,21 @@ def main(arguments):
     print ('media massa = ', media(massa), '   mean(massa): ', statistics.mean(massa), '\n')
 
     # histogramas
-    fig, axs = plt.subplots(1, 3)
+    fig, axs = plt.subplots(1, 3) # cria uma figura com três histogramas
+    
+    # define a classe de frequência, título dos eixos e do histograma na posição 0
     axs[0].hist(idade, bins=30, range=(16,46), color='red')
     axs[0].set_title('idade')
     axs[0].set_xlabel('idade (anos)')
     axs[0].set_ylabel('frequencia/ano')
 
+    # define a classe de frequência, título dos eixos e do histograma na posição 1
     axs[1].hist(altura, bins=8, range=(1.6,2.0), color='green')
     axs[1].set_title('altura')
     axs[1].set_xlabel('altura (m)')
     axs[1].set_ylabel('frequencia/0.05 m')
 
+    # define a classe de frequência, título dos eixos e do histograma na posição 2
     axs[2].hist(massa, bins=8, range=(40,120), color='grey')
     axs[2].set_title('massa')
     axs[2].set_xlabel('massa (Kg)')
